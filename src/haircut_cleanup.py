@@ -9,18 +9,17 @@ df.head()
 
 # %%
 df.drop(df.columns[6:], axis=1, inplace=True)
-df.drop([114,115], inplace=True)
+df.drop([114, 115], inplace=True)
 df[110:120]
-
-# %%
-df.tail()
 
 # %%
 df["Married"].replace(to_replace="Kid", value="NM", inplace=True)
 df["Day"].replace(to_replace="Tues", value="Tue", inplace=True)
 
+
 def cap_first_letter(word):
     return word[0].upper() + word[1:].lower()
+
 
 df["Day"] = df["Day"].apply(cap_first_letter)
 
@@ -37,8 +36,3 @@ df.head()
 
 # %%
 df.to_excel("../haircut_cleanup.xlsx")
-
-# %%
-
-
-
