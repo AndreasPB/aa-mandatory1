@@ -35,4 +35,10 @@ df["Time"] = df["Time"].astype(int)
 df["Age"] = df["Age"].astype(int)
 df.head()
 
+# %%
+df.to_excel("../haircut_cleanup.xlsx")
+
+# %%
+
+
 
