@@ -1,6 +1,7 @@
 # %%
 import matplotlib.pyplot as plt
 import pandas as pd
+import matplotlib.patches as mpatches
 
 # %% [markdown]
 # # Read the cleaned data
@@ -17,7 +18,7 @@ df.groupby("Married").mean()
 
 # %%
 df_no_time = df.drop(columns=["Time"])
-df_no_time.groupby("Married").mean().plot.bar(stacked=True)
+df_no_time.groupby("Married").mean().plot.bar()
 
 # %% [markdown]
 # Exploring the mean tip amount differences for married and unmarried customers, binned by their age.
@@ -38,9 +39,13 @@ plt.legend(["Not married", "Married"])
 # Exploring if culture has an impact on tip amounts
 
 # %%
-df_nm.groupby("Culture")["Tip amount"].mean().plot.bar()
-df_m.groupby("Culture")["Tip amount"].mean().plot.bar(color="orange")
-plt.legend(["Not married", "Married"])
+df.groupby(["Culture", "Married"])["Tip amount"].mean().plot.bar(
+    color=["orange", "blue"]
+)
+
+married_patch = mpatches.Patch(color="orange", label="Married")
+not_married_patch = mpatches.Patch(color="blue", label="Not married")
+plt.legend(handles=[married_patch, not_married_patch])
 
 # %% [markdown]
 # Exploring if the time of day has an impact on tip amounts and the age of the customer
