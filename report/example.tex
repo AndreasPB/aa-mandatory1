@@ -60,6 +60,8 @@
 
 \usepackage{hyperref} % For hyperlinks in the PDF
 
+\usepackage{graphicx} %Loading the package
+
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -102,7 +104,6 @@
 \blindtext % Dummy text
 
 \blindtext % Dummy text
-
 %------------------------------------------------
 
 \section{Methods}
@@ -127,29 +128,32 @@ Text requiring further explanation\footnote{Example footnote}.
 
 \section{Results}
 
-\begin{table}
-\caption{Example table}
-\centering
-\begin{tabular}{llr}
-\toprule
-\multicolumn{2}{c}{Name} \\
-\cmidrule(r){1-2}
-First name & Last Name & Grade \\
-\midrule
-John & Doe & $7.5$ \\
-Richard & Miles & $2$ \\
-\bottomrule
-\end{tabular}
-\end{table}
+\blindtext % Dummy text
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/tip_amount_by_age.pdf}
+  \caption{Mean tip amount split by marital status binned by age.}
+  \label{fig:tip-amount-by-age}
+\end{figure}
 
 \blindtext % Dummy text
 
-\begin{equation}
-\label{eq:emc}
-e = mc^2
-\end{equation}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/time_of_day_and_age.pdf}
+  \caption{Mean tip amount split by marital status binned by time of day.}
+  \label{fig:time-of-day-and-age}
+\end{figure}
 
 \blindtext % Dummy text
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/culture_impact.pdf}
+  \caption{Mean tip amount split by marital status binned by culture.}
+  \label{fig:culture-impact}
+\end{figure}
 
 %------------------------------------------------
 
